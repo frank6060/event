@@ -1,0 +1,32 @@
+- if user_signed_in?
+	%p#intro
+		Hello
+		= current_user.name
+		%br/
+		%span
+			Share your inspiration and see what's inspiring others.
+- else
+	%p#intro
+		What's your muse?
+		%br/
+		%span
+			Share your inspiration and see what's inspiring others.
+#posts
+	- @events.each do |event|
+		.post
+			.post_image
+				= link_to (image_tag event.image.url(:small)), event
+			.post_content
+				.title
+					%h2= link_to event.title, event
+				.data.clearfix
+					%p.username
+						Shared by
+						= event.user.name
+					%p.buttons
+						%span
+							%i.fa.fa-comments-o
+							= event.comments.count
+						%span
+							%i.fa.fa-thumbs-o-up
+							= event.get_likes.size
