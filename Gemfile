@@ -15,6 +15,7 @@ gem 'simple_form'
 gem 'acts_as_votable'
 gem 'devise'
 gem 'paperclip'
+gem 'activeadmin', github: 'activeadmin'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets

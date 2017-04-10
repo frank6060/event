@@ -13,6 +13,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .wrapper {
 	width: 80%;
+
 	margin: 0 auto;
 }
 
@@ -36,6 +37,7 @@ h1, h2, h3, h4, h5, h6 {
 
 header {
 	width: 100%;
+	background: #5993f2;
 	padding: 2rem 0;
 	border-bottom: 1px solid #E4E4E4;
 	#logo {
@@ -51,10 +53,12 @@ header {
 	}
 	nav {
 		float: right;
+
 		a {
 			margin-left: 1.5rem;
 			line-height: 2;
 			color: #9B9B9B;
+
 			text-decoration: none;
 			&:hover {
 				color: #50A7C7;
