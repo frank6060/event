@@ -1,5 +1,5 @@
 #post_show
-	%h1= @event.title
+	%h1= @event.name
 	%p.username
 		Shared by
 		= @event.user.name
@@ -10,7 +10,7 @@
 			= image_tag @event.image.url(:medium)
 			.description= simple_format(@event.description)
 		.post_data
-			= link_to "Visit Link", @event.link, class: "button"
+			= link_to "Visit Link", @event.address, class: "button"
 			= link_to like_event_path(@event), method: :get, class: "data" do
 				%i.fa.fa-thumbs-o-up
 				= pluralize(@event.get_upvotes.size, "Like")
@@ -30,7 +30,7 @@
 					= link_to (image_tag @random_event.image.url(:medium)), event_path(@random_event)
 				.post_content
 					.title
-						%h2= link_to @random_event.title, event_path(@random_event)
+						%h2= link_to @random_event.name, event_path(@random_event)
 					.data.clearfix
 						%p.username
 							Shared by
@@ -48,6 +48,6 @@
 	- @comments.each do |comment|
 		.comment
 			%p.username= comment.user.name
-			%p.content= comment.content
+			%p.content= comment.body
 
 	= render "comments/form"

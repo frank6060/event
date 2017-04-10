@@ -7,10 +7,10 @@
 			Share your inspiration and see what's inspiring others.
 - else
 	%p#intro
-		What's your muse?
+		What's your events?
 		%br/
 		%span
-			Share your inspiration and see what's inspiring others.
+			Share your events and see what's inspiring others.
 #posts
 	- @events.each do |event|
 		.post
@@ -18,7 +18,7 @@
 				= link_to (image_tag event.image.url(:small)), event
 			.post_content
 				.title
-					%h2= link_to event.title, event
+					%h2= link_to event.name, event
 				.data.clearfix
 					%p.username
 						Shared by

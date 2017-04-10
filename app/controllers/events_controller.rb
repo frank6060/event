@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+	
 	before_action :find_event, only: [:show, :edit, :update, :destroy, :upvote, :downvote]
 	before_action :authenticate_user!, except: [:index, :show]
 

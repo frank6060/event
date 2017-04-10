@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :posts do
+  resources :events do
 		member do
-			get "like", to: "posts#upvote"
-			get "dislike", to: "post#downvote"
+			get "like", to: "events#upvote"
+			get "dislike", to: "events#downvote"
 		end
 		resources :comments
 	end
+  resources :types
 
-	root 'posts#index'
+	root 'events#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
