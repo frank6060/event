@@ -13,7 +13,7 @@
 			#logo= link_to "BOMSO", root_path
 			%nav
 				- if user_signed_in?
-					= link_to current_user.name, edit_user_registration_path
+					= link_to current_user.name, edit_user_registration_path, class: "pay"
 					= link_to "Add New Inspiration", new_event_path, class: "button"
 					= link_to('Logout', destroy_user_session_path, :method => :delete, class: 'button') 
 				- else
@@ -23,3 +23,5 @@
 	%p.alert= alert
 	.wrapper
 		= yield
+
+

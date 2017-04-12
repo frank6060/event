@@ -4,17 +4,20 @@ class EventsController < ApplicationController
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
+
 		if params[:type].blank?
 			@events = Event.all.order("created_at DESC")
 		else
 			@type_id = Type.find_by(name: params[:type]).id
 			@events = Event.where(type_id: @type_id).order("created_at DESC")
+
 		end
 	end
 
 	def show
 		@comments = Comment.where(event_id: @event)
 		@random_event = Event.where.not(id: @event).order("RANDOM()").first
+		@type = Type.find(params[:id])
 
 	end
 

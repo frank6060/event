@@ -4,7 +4,7 @@
 		= current_user.name
 		%br/
 		%span
-			Share your inspiration and see what's inspiring others.
+			Share your events and see what's inspiring others.
 - else
 	%p#intro
 		What's your events?
@@ -18,7 +18,7 @@
 				= link_to (image_tag event.image.url(:small)), event
 			.post_content
 				.title
-					%h2= link_to event.name, event
+					%h2= link_to event.phone, event
 				.data.clearfix
 					%p.username
 						Shared by

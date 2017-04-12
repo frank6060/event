@@ -10,6 +10,9 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-weight: 100;
 }
+.pay{
+	color: red;
+}
 
 .wrapper {
 	width: 80%;
@@ -32,19 +35,20 @@ h1, h2, h3, h4, h5, h6 {
 	border-radius: .3rem;
 	outline: none;
 	background: white;
+	text-decoration: none;
 	color: #9B9B9B;
 }
 
 header {
 	width: 100%;
-	background: #5993f2;
+	background: #073984;
 	padding: 2rem 0;
 	border-bottom: 1px solid #E4E4E4;
 	#logo {
 		float: left;
 		font-size: 1.75rem;
 		a {
-			color: #333233;
+			color: #4c0101;
 			text-decoration: none;
 			&:hover {
 				color: #50A7C7;
@@ -62,10 +66,11 @@ header {
 			text-decoration: none;
 			&:hover {
 				color: #50A7C7;
+				text-decoration: none;
 			}
 		}
 	}
 }
-
+@import "bootstrap";
 @import 'home.css.scss';
 @import 'post.css.scss';
